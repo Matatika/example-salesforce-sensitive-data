@@ -10,3 +10,11 @@ plugins:
   - name: tap-salesforce
     variant: matatika
     pip_url: git+https://github.com/Matatika/tap-salesforce.git@v1.5.2
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+  mappers:
+  - name: meltano-map-transformer
+    variant: meltano
+    pip_url: git+https://github.com/MeltanoLabs/meltano-map-transform.git
