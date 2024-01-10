@@ -18,3 +18,15 @@ plugins:
   - name: meltano-map-transformer
     variant: meltano
     pip_url: git+https://github.com/MeltanoLabs/meltano-map-transform.git
+    mappings:
+    - name: salesforce-obfuscate-sensitive-data
+      config:
+        stream_maps:
+          LoginHistory:
+            SourceIp: __NULL__  # remove property of stream
+          LoginGeo:
+            Latitude: None  # set NULL for property of stream
+            Longitude: None
+            City: '"Berkhamsted"'  # set mock value for property of stream
+            PostalCode: '"HP4 1EH"'
+            Subdivision: '"Hertfordshire"'
