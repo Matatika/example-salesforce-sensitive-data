@@ -10,6 +10,10 @@ plugins:
   - name: tap-salesforce
     variant: matatika
     pip_url: git+https://github.com/Matatika/tap-salesforce.git@v1.5.2
+    select:
+    - LoginHistory.*  # include stream (all properties)
+    - LoginGeo.*
+    - '!LoginHistory.SourceIp' # exclude property of stream
   loaders:
   - name: target-postgres
     variant: meltanolabs
