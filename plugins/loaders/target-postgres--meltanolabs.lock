@@ -94,7 +94,8 @@
     },
     {
       "name": "password",
-      "kind": "password",
+      "kind": "string",
+      "sensitive": true,
       "label": "Password",
       "description": "Password used to authenticate. Note if sqlalchemy_url is set this will be ignored."
     },
@@ -133,13 +134,15 @@
     },
     {
       "name": "ssh_tunnel.private_key",
-      "kind": "password",
+      "kind": "string",
+      "sensitive": true,
       "label": "SSH Tunnel Private Key",
       "description": "Private Key for authentication to the bastion host"
     },
     {
       "name": "ssh_tunnel.private_key_password",
-      "kind": "password",
+      "kind": "string",
+      "sensitive": true,
       "label": "SSH Tunnel Private Key Password",
       "description": "Private Key Password, leave None if no password is set"
     },
@@ -172,7 +175,8 @@
     },
     {
       "name": "ssl_client_private_key",
-      "kind": "password",
+      "kind": "string",
+      "sensitive": true,
       "value": "~/.postgresql/postgresql.key",
       "label": "SSL Client Private Key",
       "description": "The private key for the certificate you provided. Can be provided either as the certificate itself (in .env) or as a filepath to the certificate. Note if sqlalchemy_url is set this will be ignored."
